@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "543682975270",
+    "project_id": "rms1-9e58e",
+    "firebase_url": "https://rms1-9e58e-default-rtdb.firebaseio.com/",
+    "storage_bucket": "rms1-9e58e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:543682975270:android:83ba8a318c3bc322d1b8e7",
+        "android_client_info": {
+          "package_name": "com.example.robomaster"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "543682975270-d51dnd5pf5hl8vqd5f6vroau2n60ue54.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDStTCbOYJMisw3hY6oqdEVgKGK8uICNZ8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "543682975270-d51dnd5pf5hl8vqd5f6vroau2n60ue54.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

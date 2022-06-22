@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvDialogName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="NAME"
+        android:textSize="30dp">
+
+    </TextView>
+    <ImageView
+        android:id="@+id/imgDialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+    </ImageView>
+
+    <TextView
+        android:id="@+id/tvDialogDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="DESC"
+        android:textSize="15dp">
+    </TextView>
+
+    <TextView
+        android:id="@+id/tvDialogPara"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="PARA"
+        android:textSize="15dp">
+
+    </TextView>
+
+    <Button
+        android:id="@+id/btnDialogClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textColor="@color/colorButtonText"
+        android:fontFamily="@font/seg_ui_semibold"
+        android:text="EXIT">
+
+    </Button>
+
+</LinearLayout>

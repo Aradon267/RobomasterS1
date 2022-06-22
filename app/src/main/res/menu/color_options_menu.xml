@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/itmCheck"
+        android:title="Check" />
+    <item
+        android:id="@+id/itmApply"
+        android:title="Apply" />
+    <item
+        android:id="@+id/itmCam"
+        android:title="Camera" />
+    <item
+        android:id="@+id/itmReset"
+        android:title="Reset photo" />
+    <item
+        android:id="@+id/itmBack"
+        android:title="Back" />
+
+</menu>
+

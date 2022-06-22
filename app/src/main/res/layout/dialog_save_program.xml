@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/etName"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:background="@drawable/edit_text_background"
+            android:drawableTint="@color/colorTextBlack"
+            android:fontFamily="@font/seg_ui_semibold"
+            android:hint="Name"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/colorTextBlack"
+            android:textColorHint="@color/colorPlaceholder" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/etDesc"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:background="@drawable/edit_text_background"
+            android:drawableTint="@color/colorTextBlack"
+            android:fontFamily="@font/seg_ui_semibold"
+            android:hint="Description"
+
+            android:inputType="textEmailAddress"
+            android:textColor="@color/colorTextBlack"
+            android:textColorHint="@color/colorPlaceholder" />
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="50dp"
+        android:layout_height="25dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+
+        <Button
+            android:id="@+id/btnConfirmSave"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textColor="@color/colorButtonText"
+            android:text="YES"
+            android:fontFamily="@font/seg_ui_semibold"
+            android:background="@drawable/button_background"/>
+
+        <Button
+            android:id="@+id/btnNoSave"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:textColor="@color/colorButtonText"
+            android:layout_height="match_parent"
+            android:text="NO"
+            android:fontFamily="@font/seg_ui_semibold"
+            android:background="@drawable/button_background"/>
+    </LinearLayout>
+</LinearLayout>

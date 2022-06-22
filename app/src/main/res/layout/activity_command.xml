@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CommandActivity"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <EditText
+
+            android:id="@+id/etMoveFR"
+            android:textColorHint="@color/colorPlaceholder"
+            android:drawableTint="@color/colorTextBlack"
+            android:hint="FR"
+            android:inputType="numberSigned"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:textColorHint="@color/colorPlaceholder"
+            android:drawableTint="@color/colorTextBlack"
+            android:id="@+id/etMoveFL"
+            android:hint="FL"
+            android:inputType="numberSigned"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            />
+
+        <EditText
+            android:textColorHint="@color/colorPlaceholder"
+            android:drawableTint="@color/colorTextBlack"
+            android:id="@+id/etMoveBR"
+            android:hint="BR"
+            android:layout_width="50dp"
+            android:inputType="numberSigned"
+            android:layout_height="wrap_content"
+            />
+
+        <EditText
+            android:textColorHint="@color/colorPlaceholder"
+            android:drawableTint="@color/colorTextBlack"
+            android:id="@+id/etMoveBL"
+            android:hint="BL"
+            android:layout_width="50dp"
+            android:inputType="numberSigned"
+            android:layout_height="wrap_content"
+            />
+        <EditText
+            android:textColorHint="@color/colorPlaceholder"
+            android:drawableTint="@color/colorTextBlack"
+            android:id="@+id/etMoveDuration"
+            android:layout_width="50dp"
+            android:inputType="number"
+            android:layout_height="wrap_content"
+            android:hint="sc"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:orientation="horizontal">
+        <EditText
+            android:textColorHint="@color/colorPlaceholder"
+            android:drawableTint="@color/colorTextBlack"
+            android:id="@+id/etBlinkR"
+            android:hint="R"
+            android:layout_width="50dp"
+            android:inputType="number"
+            android:layout_height="wrap_content"
+            />
+
+        <EditText
+            android:textColorHint="@color/colorPlaceholder"
+            android:drawableTint="@color/colorTextBlack"
+            android:id="@+id/etBlinkG"
+            android:hint="G"
+            android:layout_width="50dp"
+            android:inputType="number"
+            android:layout_height="wrap_content"
+            />
+
+        <EditText
+            android:textColorHint="@color/colorPlaceholder"
+            android:drawableTint="@color/colorTextBlack"
+            android:id="@+id/etBlinkB"
+            android:hint="B"
+            android:layout_width="50dp"
+            android:inputType="number"
+            android:layout_height="wrap_content"
+            />
+
+        <EditText
+            android:textColorHint="@color/colorPlaceholder"
+            android:drawableTint="@color/colorTextBlack"
+            android:id="@+id/etBlinkDuration"
+            android:layout_width="50dp"
+            android:inputType="number"
+            android:layout_height="wrap_content"
+            android:hint="sc"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:textColorHint="@color/colorPlaceholder"
+            android:drawableTint="@color/colorTextBlack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/etScript"
+            android:hint="Add custom command"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:orientation="horizontal">
+
+        <ListView
+            android:id="@+id/lvCommands"
+            android:layout_width="223dp"
+            android:layout_height="350dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btnMove"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/seg_ui_semibold"
+                android:onClick="handleMove"
+                android:text="Move"
+                android:textColor="@color/colorButtonText" />
+
+            <Button
+                android:id="@+id/btnShoot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/seg_ui_semibold"
+                android:onClick="handleShoot"
+                android:text="Shoot"
+                android:textColor="@color/colorButtonText" />
+
+            <Button
+                android:textColor="@color/colorButtonText"
+                android:fontFamily="@font/seg_ui_semibold"
+                android:id="@+id/btnBlink"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="handleBlink"
+                android:text="Blink" />
+
+            <Button
+                android:id="@+id/btnCustom"
+                android:textColor="@color/colorButtonText"
+                android:fontFamily="@font/seg_ui_semibold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Custom" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+    <Button
+        android:id="@+id/btnExecute"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="executeScript"
+        android:text="Execute"
+        android:textColor="@color/colorButtonText"
+        android:fontFamily="@font/seg_ui_semibold"
+
+        />
+
+
+</LinearLayout>

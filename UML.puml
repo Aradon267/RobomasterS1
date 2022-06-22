@@ -1,0 +1,215 @@
+@startuml
+class com.example.robomaster.Server {
+- String ServerIP
+- int ServerPort
+- Socket socket
+- OutputStream writer
++ boolean establishConnection()
++ boolean isConnected()
++ boolean sendMessage(byte[])
++ {static} byte[] concat(byte[])
++ boolean closeConnection()
+}
+class com.example.robomaster.RobomasterClass {
+- Server server
+- Queue<String> queue
+- Queue<String> eventsQueue
++ boolean isConnected()
++ void establishConnection(Context,Class,String)
++ void establishQuickConnection()
++ void addToMessagesQueue(String)
++ void sendMessagesQueue()
+- String joinMessagesQueue()
++ void sendMessage(String)
+- void requestMessage(String)
++ void disconnect()
++ Queue<String> getQ()
++ void clearQueue()
+}
+class com.example.robomaster.Program {
++ List<String> program
++ List<String> programDisplay
++ String username
++ String programName
++ String programDescription
++ String date
++ String progid
++ String getprogid()
++ void setprogid(String)
++ List<String> getProgram()
++ void setProgram(List<String>)
++ String getUsername()
++ void setUsername(String)
++ String getProgramName()
++ void setProgramName(String)
++ String getProgramDescription()
++ void setProgramDescription(String)
++ String getDate()
++ void setDate(String)
++ List<String> getProgramDisplay()
++ void setProgramDisplay(List<String>)
++ String toStringProgram()
++ String toStringProgramDisplay()
+}
+class com.example.robomaster.ProgramsAdapter {
+~ ArrayList<Program> functions
+~ Context context
++ View getView(int,View,ViewGroup)
+}
+class com.example.robomaster.User {
++ String username
++ String password
++ String getPassword()
++ void setPassword(String)
++ String getUsername()
++ void setUsername(String)
++ String toString()
+}
+class com.example.robomaster.TutorialAdapter {
+~ ArrayList<RobotFunctionTutorial> functions
+~ Context context
++ View getView(int,View,ViewGroup)
+}
+class com.example.robomaster.TutorialActivity {
+- ArrayList<RobotFunctionTutorial> functions
+- ListView lvFunctions
+- Button btnFinish
+# void onCreate(Bundle)
++ void refresh_lv()
+- void initializeComponents()
++ void initFunctions()
+}
+class com.example.robomaster.LoginActivity {
+- Button btnReg
+- Button btnLogin
+- Button btnFetch
+- CheckBox cbRem
+- EditText etName
+- EditText etPass
+- FirebaseDatabase database
+- DatabaseReference myRef
+# void onCreate(Bundle)
+- void initializeLoinScreen()
++ boolean isEmpty(EditText)
++ void logSaved(String)
+}
+class com.example.robomaster.RobotFunctionTutorial {
++ String funcName
++ String funcDescStart
++ String funcDescRest
++ String funcPara
++ String imgSrc
++ String getFuncDesc()
++ String getFuncDescRest()
++ String getFuncName()
++ String getFuncPara()
++ String getImg()
++ void setFuncName(String)
++ void setFuncDescStart(String)
++ void setFuncDescRest(String)
++ void setFuncPara(String)
++ void setImgSrc(String)
+}
+class com.example.robomaster.SignupActivity {
+- Button btnBack
+- Button btnSignin
+- EditText etName
+- EditText etPass
+- FirebaseDatabase database
+- DatabaseReference myRef
+# void onCreate(Bundle)
+- void initializeComponents()
++ boolean isEmpty(EditText)
+}
+class com.example.robomaster.OptionsActivity {
+- ImageView imgCircle
+- View colorDis
+- Bitmap bitmap
+- EditText etBlinkR
+# void onCreate(Bundle)
+- void initializeComponents()
++ boolean checkRange(int,int,String)
++ boolean isEmpty(EditText)
++ boolean onCreateOptionsMenu(Menu)
++ boolean onOptionsItemSelected(MenuItem)
+# void onActivityResult(int,int,Intent)
++ void switchToCamera(Intent)
+}
+class com.example.robomaster.RobotLinkActivity {
++ {static} RobomasterClass robomaster
+- EditText etServerIP
+- Button btnLogout
+- int counter
+- String name
+# void onCreate(Bundle)
++ void handleEstablishConnection(View)
++ void handleQuickConnect(View)
+- void initializeComponents()
++ boolean isEmpty(EditText)
+}
+class com.example.robomaster.CommandActivity {
+- EditText etScript
+- Button btnExecute
+- Button btnCustom
+- ListView lvCommands
+- EditText etMoveFR
+- EditText etBlinkR
+- EditText etMoveDuration
+- EditText etBlinkDuration
+- String permaRes
+- String programRes
+- String programDisRes
+- ArrayList<String> commandsArr
+- RobomasterClass robomaster
+- FirebaseDatabase database
+- DatabaseReference myRef
+- String name
+# void onCreate(Bundle)
+- void initializeComponents()
++ void addCustomScript()
+# void onDestroy()
++ boolean onCreateOptionsMenu(Menu)
++ boolean onOptionsItemSelected(MenuItem)
+# void onActivityResult(int,int,Intent)
++ void handleMove(View)
++ void handleBlink(View)
++ void handleShoot(View)
++ void permaLed(String)
++ void loadSavedProgram(String[],String[])
++ void executeScript(View)
++ void refresh_lv()
++ boolean checkRange(int,int,String)
++ boolean isEmpty(EditText)
++ void resetQueueContain(Queue<String>)
++ void resetQueue(Queue<String>)
+}
+class com.example.robomaster.CommandActivity.IntentCodes {
++ {static} int COLOR_REQUEST
++ {static} int PROGRAM_REQUEST
++ {static} int RESULT_SUCCESS
+}
+class com.example.robomaster.LoadProgramsActivity {
+- String name
+- ListView lvFunctions
+- Button btnFinish
+- ArrayList<Program> programs
+- FirebaseDatabase database
+- DatabaseReference myRef
+# void onCreate(Bundle)
+- void initializeComponents()
+- void initPrograms()
++ void refresh_lv()
+}
+
+
+android.widget.ArrayAdapter <|-- com.example.robomaster.ProgramsAdapter
+android.widget.ArrayAdapter <|-- com.example.robomaster.TutorialAdapter
+androidx.appcompat.app.AppCompatActivity <|-- com.example.robomaster.TutorialActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.robomaster.LoginActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.robomaster.SignupActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.robomaster.OptionsActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.robomaster.RobotLinkActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.robomaster.CommandActivity
+com.example.robomaster.CommandActivity +.. com.example.robomaster.CommandActivity.IntentCodes
+androidx.appcompat.app.AppCompatActivity <|-- com.example.robomaster.LoadProgramsActivity
+@enduml
